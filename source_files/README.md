@@ -30,11 +30,7 @@ Here,
 
 ```python
 # Generate a random normal variable with given parameters , n=5000
-import numpy as np
 
-mu, sigma = 14, 2.8
-n = 5000
-s = np.random.normal(mu, sigma, n)
 ```
 
 ## Calculate a normalized histogram for this distribution in matplotlib, with bin size = 20
@@ -43,22 +39,16 @@ Make sure to get the bin positions and counts for each of the obtained bins. You
 
 
 ```python
-import matplotlib.pyplot as plt
-%matplotlib inline
-# Create the bins and histogram
-count, bins, ignored = plt.hist(s, 20, density=True)
+# Calculate a histogram for above data distribution
+
 ```
-
-
-![png](index_files/index_6_0.png)
-
 
 ## Use the formula to calculate the density function with $\mu$, $\sigma$ and bin information obtained before
 
 
 ```python
 # Calculate the normal Density function 
-density = 1/(sigma * np.sqrt(2 * np.pi)) * np.exp( - (bins - mu)**2 / (2 * sigma**2))
+density = None
 ```
 
 ## Plot the histogram and density function
@@ -66,28 +56,16 @@ density = 1/(sigma * np.sqrt(2 * np.pi)) * np.exp( - (bins - mu)**2 / (2 * sigma
 
 ```python
 # Plot histogram along with the density function
-plt.hist(s, 20, density=True)
-plt.plot(bins, density)
-plt.show()
+
 ```
-
-
-![png](index_files/index_10_0.png)
-
 
 ## Visualize the distribution using seaborn and plot the KDE
 
 
 ```python
-import seaborn as sns
-import warnings
-warnings.filterwarnings('ignore')
-sns.distplot(s, bins=20, kde=True);
+# Use seaborn to plot the histogram with KDE
+
 ```
-
-
-![png](index_files/index_12_0.png)
-
 
 ## Summary
 
